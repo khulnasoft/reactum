@@ -31,13 +31,22 @@ jobs:
 
     - name: Install dependencies
       run: pnpm install
+      working-directory: ./hooks.khulnasoft.com/
+
+    - name: Run tests
+      run: pnpm test
+      working-directory: ./hooks.khulnasoft.com/
+
+    - name: Build project
+      run: pnpm run build
+      working-directory: ./hooks.khulnasoft.com/
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./hooks.khulnasoft.com/build
 
   release:
     runs-on: ubuntu-latest
@@ -54,23 +63,17 @@ jobs:
 
     - name: Install pnpm
       run: npm install -g pnpm
-      with:
-        dir: ./hooks.khulnasoft.com/
 
     - name: Check pnpm version
       run: pnpm --version
-      with:
-        dir: ./hooks.khulnasoft.com/
 
     - name: Install dependencies
       run: pnpm install
-      with:
-        dir: ./hooks.khulnasoft.com/
+      working-directory: ./hooks.khulnasoft.com/
 
     - name: Build project
       run: pnpm run build
-      with:
-        dir: ./hooks.khulnasoft.com/
+      working-directory: ./hooks.khulnasoft.com/
 
     - name: Create release
       id: create_release
@@ -89,7 +92,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build
+        asset_path: ./hooks.khulnasoft.com/build
         asset_name: build.zip
         asset_content_type: application/zip
 
@@ -99,3 +102,4 @@ jobs:
         pnpm publish --registry=https://npm.pkg.github.com
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: ./hooks.khulnasoft.com/
