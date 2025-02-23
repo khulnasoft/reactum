@@ -54,15 +54,23 @@ jobs:
 
     - name: Install pnpm
       run: npm install -g pnpm
+      with:
+        dir: ./hooks.khulnasoft.com/
 
     - name: Check pnpm version
       run: pnpm --version
+      with:
+        dir: ./hooks.khulnasoft.com/
 
     - name: Install dependencies
       run: pnpm install
+      with:
+        dir: ./hooks.khulnasoft.com/
 
     - name: Build project
       run: pnpm run build
+      with:
+        dir: ./hooks.khulnasoft.com/
 
     - name: Create release
       id: create_release
