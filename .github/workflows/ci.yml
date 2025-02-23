@@ -90,3 +90,10 @@ jobs:
         asset_path: ./build
         asset_name: build.zip
         asset_content_type: application/zip
+
+    - name: Publish to GitHub Packages
+      run: |
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+        pnpm publish --registry=https://npm.pkg.github.com
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
