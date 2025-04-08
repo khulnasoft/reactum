@@ -1,19 +1,10 @@
-Here's an **improved and visually appealing `README.md`** for **Reactum**, designed to be more **informative**, **engaging**, and **developer-friendly**, while still being minimal and clean:
-
----
-
-```md
-<p align="center">
-  <img src="https://hooks.khulnasoft.com/meta/og.jpg" alt="Reactum" width="100%" />
-</p>
+<h1 align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 900; font-size: 3rem;">⚛️ Reactum</h1>
 
 <p align="center">
   <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fkhulnasoft%2Freactum?ref=badge_shield&issueType=license">
     <img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkhulnasoft%2Freactum.svg?type=shield&issueType=license" alt="FOSSA Status" />
   </a>
 </p>
-
-<h1 align="center">⚛️ Reactum</h1>
 
 <p align="center">
   A modern, server-safe collection of essential & experimental React hooks – built with ❤️ by the <a href="https://khulnasoft.com">Khulnasoft</a> team.
@@ -134,15 +125,10 @@ npm run dev
 ## 🛡️ License
 
 This project is licensed under the [MIT License](LICENSE).  
-License scanning provided by [FOSSA](https://fossa.com/).
+License scanning provided by [FOSSA](https://fossa.com).
 
 ---
 
 <p align="center">
   Built with 🛠️ by <a href="https://khulnasoft.com">Khulnasoft</a> • Star us on <a href="https://github.com/khulnasoft/reactum">GitHub ⭐</a>
 </p>
-```
-
----
-
-Would you like a dark/light theme badge section, contributor avatars, or Shields.io metrics (npm downloads, GitHub stars, etc.) included as well?
